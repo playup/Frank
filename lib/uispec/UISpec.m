@@ -49,7 +49,7 @@ static UILog *logger = nil;
 	if (specClasses.count == 0) return;
 	int examplesCount = 0;
 	[logger onStart];
-	for (Class *class in specClasses) {
+	for (Class class in specClasses) {
 		NSArray *examples = [self examplesForSpecClass:class];
 		if (examples.count == 0) continue;
 		examplesCount = examplesCount + examples.count;
