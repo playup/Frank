@@ -404,11 +404,19 @@
 		NSSet *touches = [[NSMutableSet alloc] initWithObjects:&touch count:1];
 		
 		[touch.view touchesBegan:touches withEvent:eventDown];
+        for (UIGestureRecognizer *recognizer in [view gestureRecognizers])
+        {
+            [recognizer touchesBegan:touches withEvent:eventDown];
+        }
 		
 		UIEvent *eventUp = [[NSClassFromString(@"UITouchesEvent") alloc] initWithTouch:touch];
 		[touch setPhase:UITouchPhaseEnded];
 		
 		[touch.view touchesEnded:touches withEvent:eventDown];
+        for (UIGestureRecognizer *recognizer in [view gestureRecognizers])
+        {
+            [recognizer touchesEnded:touches withEvent:eventDown];
+        }
 		
 		[eventDown release];
 		[eventUp release];
