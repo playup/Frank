@@ -107,13 +107,13 @@ module FrankHelper
         if frankly_ping
           num_consec_failures = 0
           num_consec_successes += 1
-          print (num_consec_successes == 1 ) ? "\n" : "\r"
-          print "FRANK!".slice(0,num_consec_successes)
+          #print (num_consec_successes == 1 ) ? "\n" : "\r"
+          #print "FRANK!".slice(0,num_consec_successes)
         else
           num_consec_successes = 0
           num_consec_failures += 1
-          print (num_consec_failures == 1 ) ? "\n" : "\r"
-          print "PING FAILED" + "!"*num_consec_failures
+          #print (num_consec_failures == 1 ) ? "\n" : "\r"
+          #print "PING FAILED" + "!"*num_consec_failures
         end
         STDOUT.flush
         sleep 0.2
